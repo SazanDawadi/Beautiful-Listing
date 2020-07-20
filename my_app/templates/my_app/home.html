@@ -1,0 +1,28 @@
+{% extends 'my_app/main.html' %}
+
+{% block content %}
+
+    <h2 style="text-align: center">Search Results For : <strong>{{ search}}</strong></h2>
+    <br>
+    <div class="row">
+    {% for post in final_postings %}
+      <!-- card start-->
+      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+        <div class="bg-white rounded shadow-sm"><img src="{{ post.3 }}" alt="" class=" card-img img-fluid card-img-top">
+          <div class="p-4">
+            
+            <p class="small text-muted mb-0">{{ post.0 }}</p>
+            <h5> <a href="{{ post.1 }}" class="text-dark">See more</a></h5>
+            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+              <div class="badge badge-success px-3 rounded-pill font-weight-normal">Price</div>
+              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">{{ post.2 }}</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- card end-->
+    {% endfor %}      
+    </div>
+    
+
+{% endblock content %}
